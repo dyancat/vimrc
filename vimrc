@@ -29,6 +29,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'mbbill/undotree'
+Plug 'ervandew/supertab'
 
 call plug#end()
 
@@ -47,7 +49,7 @@ set autochdir
 
 set encoding=utf-8
 set scroll=5
-set scrolloff=10
+set scrolloff=3
 set nobackup
 set noswapfile
 nnoremap / /\v
@@ -57,7 +59,6 @@ set gdefault
 set hlsearch
 set ignorecase
 set smartcase
-
 set wrap
 set textwidth=100
 set formatoptions=qrn1
@@ -82,15 +83,18 @@ noremap \ ,
 
 nnoremap <space> <C-w>w
 nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F4> :UndotreeToggle<CR>
 
 cnoremap <C-k> <Up>
 cnoremap <C-j> <Down>
+
 nnoremap <C-s> :w<CR>
+inoremap <C-s> <C-o>:w<CR>
+
 nnoremap <C-TAB> :bn<CR>
 nnoremap <C-S-TAB> :bp<CR>
 nnoremap <C-c> :bp\|bd #<CR>
-nnoremap <C-_> :Commentary<CR>
-vnoremap <C-_> :Commentary<CR>
+nnoremap <C-t> :enew<CR>
 
 inoremap jj <ESC>
 
@@ -164,16 +168,16 @@ let g:airline_theme='papercolor'
 autocmd FileType help wincmd L
 autocmd BufNewFile,BufReadPost *.TODO,TODO,*.todo,*.todolist,*.taskpaper,*.tasks set filetype=tasks
 
-"Disable <C-TAB> buffer switch in NERDTree
-"---------------------------
-autocmd FileType qf,nerdtree noremap <buffer> <C-TAB> <nop>
-autocmd FileType qf,nerdtree noremap <buffer> <C-S-TAB> <nop>
-
 "Prevent bn/bp from switching to these
 "---------------------------
 augroup qf
     autocmd!
-    autocmd FileType qf,nerdtree set nobuflisted
+    "Disable <C-TAB> buffer switch these types
+    "---------------------------
+    autocmd FileType qf,nerdtree,undotree,diff noremap <buffer> <C-TAB> <nop>
+    autocmd FileType qf,nerdtree,undotree,diff noremap <buffer> <C-S-TAB> <nop>
+
+    autocmd FileType qf,nerdtree,undotree,diff set nobuflisted
 augroup END
 
 "vim-closetag
