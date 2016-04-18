@@ -26,6 +26,9 @@ Plug 'moll/vim-node'
 Plug 'bronson/vim-visual-star-search'
 Plug 'irrationalistic/vim-tasks'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
@@ -120,7 +123,6 @@ set guioptions-=r "remove right-hand scrollbar
 set guioptions-=L "remove left-hand scrollbar
 
 if has("gui_running")
-    "colorscheme atom
     colorscheme flattened_dark
     set background=dark
     set guifont=Consolas:h11
@@ -155,7 +157,7 @@ let g:syntastic_check_on_wq = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-"let g:airline_theme='molokai'
+let g:airline_theme='papercolor'
 "
 "vim-tasks
 "---------------------------
