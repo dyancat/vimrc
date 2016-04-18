@@ -105,10 +105,14 @@ nnoremap <Right> <C-w>l
 
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
 nnoremap <leader>y "+y
 nnoremap <leader>Y "+Y
 vnoremap <leader>y "+y
 vnoremap <leader>Y "+Y
+
 nnoremap <leader>op o<ESC>"+p
 nnoremap <leader>oP O<ESC>"+P
 
@@ -127,7 +131,7 @@ set guioptions-=r "remove right-hand scrollbar
 set guioptions-=L "remove left-hand scrollbar
 
 if has("gui_running")
-    colorscheme flattened_dark
+    colorscheme PaperColor
     set background=dark
     set guifont=Consolas:h11
 endif
