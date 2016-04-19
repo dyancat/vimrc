@@ -98,11 +98,6 @@ nnoremap <C-t> :enew<CR>
 
 inoremap jj <ESC>
 
-nnoremap <Up> <C-w>k
-nnoremap <Down> <C-w>j
-nnoremap <Left> <C-w>h
-nnoremap <Right> <C-w>l
-
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
@@ -132,20 +127,21 @@ noremap ^ 0
 nmap <Leader>/ gcc
 vmap <Leader>/ gc
 
+let g:gruvbox_invert_selection=0
+let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_contrast_light = 'soft'
+colorscheme gruvbox
+set background=dark
+
 "GUI options
 "---------------------------
-set guioptions-=T "remove toolbar
-set guioptions-=m "remove menubar
-set guioptions-=r "remove right-hand scrollbar
-set guioptions-=L "remove left-hand scrollbar
-
 if has("gui_running")
-    let g:gruvbox_invert_selection=0
-    let g:gruvbox_contrast_dark = 'soft'
-    let g:gruvbox_contrast_light = 'soft'
-    colorscheme gruvbox
-    set background=dark
     set guifont=Consolas:h11
+
+    set guioptions-=T "remove toolbar
+    set guioptions-=m "remove menubar
+    set guioptions-=r "remove right-hand scrollbar
+    set guioptions-=L "remove left-hand scrollbar
 endif
 
 "ctrlp
