@@ -176,8 +176,6 @@ autocmd BufNewFile,BufReadPost *.TODO,TODO,*.todo,*.todolist,*.taskpaper,*.tasks
 "---------------------------
 augroup qf
     autocmd!
-    "Disable <C-TAB> buffer switch these types
-    "---------------------------
     autocmd FileType qf,nerdtree,undotree,diff noremap <buffer> <C-TAB> <nop>
     autocmd FileType qf,nerdtree,undotree,diff noremap <buffer> <C-S-TAB> <nop>
 
