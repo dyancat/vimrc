@@ -4,10 +4,10 @@ set nocompatible
 "---------------------------
 call plug#begin('~/.vim/plugged')
 
+Plug 'itchyny/lightline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'romainl/flattened'
@@ -31,6 +31,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'mbbill/undotree'
 Plug 'ervandew/supertab'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -116,7 +117,8 @@ vnoremap <leader>Y "+Y
 nnoremap <leader>op o<ESC>"+p
 nnoremap <leader>oP O<ESC>"+P
 
-nnoremap <leader>vim :e $MYVIMRC<CR>
+nnoremap <leader>v :e $MYVIMRC<CR>
+nnoremap <leader>V :so $MYVIMRC<CR>
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>b :ls<CR>
 
@@ -124,6 +126,12 @@ nnoremap <leader>== gg=G``
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 
 nnoremap <leader>j :set ft=json<CR>:%!python -m json.tool<CR>
+
+noremap <CR> :
+noremap 0 ^
+noremap ^ 0
+nmap <Leader>/ gcc
+vmap <Leader>/ gc
 
 "GUI options
 "---------------------------
@@ -133,7 +141,10 @@ set guioptions-=r "remove right-hand scrollbar
 set guioptions-=L "remove left-hand scrollbar
 
 if has("gui_running")
-    colorscheme PaperColor
+    let g:gruvbox_invert_selection=0
+    let g:gruvbox_contrast_dark = 'soft'
+    let g:gruvbox_contrast_light = 'soft'
+    colorscheme gruvbox
     set background=dark
     set guifont=Consolas:h11
 endif
@@ -167,7 +178,7 @@ let g:syntastic_check_on_wq = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_theme='papercolor'
+let g:airline_theme='gruvbox'
 "
 "vim-tasks
 "---------------------------
