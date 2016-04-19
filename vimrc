@@ -123,6 +123,8 @@ nnoremap <leader>b :ls<CR>
 nnoremap <leader>== gg=G``
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 
+nnoremap <leader>j :set ft=json<CR>:%!python -m json.tool<CR>
+
 "GUI options
 "---------------------------
 set guioptions-=T "remove toolbar
