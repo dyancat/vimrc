@@ -75,69 +75,15 @@ set foldlevelstart=20
 
 syntax enable
 
-cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h') : '%%'
 
-"Mappings
+"GUI options
 "---------------------------
-let mapleader = ","
-noremap \ ,
-
-nnoremap <space> <C-w>w
-nnoremap <F3> :NERDTreeToggle<CR>
-nnoremap <F4> :UndotreeToggle<CR>
-
-cnoremap <C-k> <Up>
-cnoremap <C-j> <Down>
-
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <C-o>:w<CR>
-
-nnoremap <C-TAB> :bn<CR>
-nnoremap <C-S-TAB> :bp<CR>
-nnoremap <C-c> :bp\|bd #<CR>
-nnoremap <C-t> :enew<CR>
-
-inoremap jj <ESC>
-
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
-
-nnoremap <leader>y "+y
-nnoremap <leader>Y "+Y
-vnoremap <leader>y "+y
-vnoremap <leader>Y "+Y
-
-nnoremap <leader>op o<ESC>"+p
-nnoremap <leader>oP O<ESC>"+P
-
-nnoremap <leader>v :e $MYVIMRC<CR>
-nnoremap <leader>V :so $MYVIMRC<CR>
-nnoremap <leader><space> :noh<cr>
-nnoremap <leader>b :ls<CR>
-
-nnoremap <leader>== gg=G``
-nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
-
-nnoremap <leader>j :set ft=json<CR>:%!python -m json.tool<CR>
-nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
-
-nnoremap <CR> :
-vnoremap <CR> :
-noremap 0 ^
-noremap ^ 0
-nmap <Leader>/ gcc
-vmap <Leader>/ gc
-
 let g:gruvbox_invert_selection=0
 let g:gruvbox_contrast_dark = 'soft'
 let g:gruvbox_contrast_light = 'soft'
 colorscheme gruvbox
 set background=dark
 
-"GUI options
-"---------------------------
 if has("gui_running")
     set guifont=Consolas:h11
 
@@ -200,3 +146,66 @@ let g:closetag_filenames = "*.js,*.jsx,*.html,*.xhtml,*.phtml"
 "quick-scope
 "---------------------------
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+"Mappings
+"---------------------------
+let mapleader = ","
+noremap \ ,
+
+"Easier changing of windows
+nnoremap <space> <C-w>w
+
+"Buffer toggles
+nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F4> :UndotreeToggle<CR>
+
+"Easier navigation of command mode
+cnoremap <C-k> <Up>
+cnoremap <C-j> <Down>
+
+"CTRL-S for saving
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <C-o>:w<CR>
+
+"Buffer switching/closing/creating
+nnoremap <C-TAB> :bn<CR>
+nnoremap <C-S-TAB> :bp<CR>
+nnoremap <C-c> :bp\|bd #<CR>
+nnoremap <C-t> :enew<CR>
+
+"Easier yanking/pasting from system clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+nnoremap <leader>y "+y
+nnoremap <leader>Y "+Y
+vnoremap <leader>y "+y
+vnoremap <leader>Y "+Y
+nnoremap <leader>op o<ESC>"+p
+nnoremap <leader>oP O<ESC>"+P
+
+"Easier vimrc editing/reloading
+nnoremap <leader>v :e $MYVIMRC<CR>
+nnoremap <leader>V :so $MYVIMRC<CR>
+
+"JSON formatting
+nnoremap <leader>j :set ft=json<CR>:%!python -m json.tool<CR>
+
+"Macro editing
+nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
+
+"Commenting
+nmap <Leader>/ gcc
+vmap <Leader>/ gc
+
+"%% in command mode expands to current dir
+cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h') : '%%'
+
+"Misc
+nnoremap <leader><space> :noh<cr>
+nnoremap <leader>b :ls<CR>
+nnoremap <leader>== gg=G``
+nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
+noremap 0 ^
+noremap ^ 0
