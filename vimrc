@@ -31,6 +31,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'mbbill/undotree'
 Plug 'ervandew/supertab'
 Plug 'morhetz/gruvbox'
+Plug 'unblevable/quick-scope'
 
 call plug#end()
 
@@ -120,8 +121,10 @@ nnoremap <leader>== gg=G``
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 
 nnoremap <leader>j :set ft=json<CR>:%!python -m json.tool<CR>
+nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
-noremap <CR> :
+nnoremap <CR> :
+vnoremap <CR> :
 noremap 0 ^
 noremap ^ 0
 nmap <Leader>/ gcc
@@ -193,3 +196,7 @@ augroup END
 "vim-closetag
 "---------------------------
 let g:closetag_filenames = "*.js,*.jsx,*.html,*.xhtml,*.phtml"
+
+"quick-scope
+"---------------------------
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
