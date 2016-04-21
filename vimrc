@@ -73,6 +73,8 @@ set hidden
 set foldmethod=indent
 set foldlevelstart=20
 
+set autoread
+
 syntax enable
 
 
