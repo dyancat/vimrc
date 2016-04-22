@@ -32,6 +32,7 @@ Plug 'mbbill/undotree'
 Plug 'ervandew/supertab'
 Plug 'morhetz/gruvbox'
 Plug 'unblevable/quick-scope'
+Plug 'dzeban/vim-log-syntax'
 
 call plug#end()
 
@@ -74,6 +75,8 @@ set foldmethod=indent
 set foldlevelstart=20
 
 set autoread
+set lazyredraw
+set wildmenu
 
 syntax enable
 
@@ -125,13 +128,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme='gruvbox'
-"
+
 "vim-tasks
 "---------------------------
 autocmd FileType help wincmd L
 autocmd BufNewFile,BufReadPost *.TODO,TODO,*.todo,*.todolist,*.taskpaper,*.tasks set filetype=tasks
 
-"Prevent bn/bp from switching to these
+"Prevent bn/bp from switching to/from these
 "---------------------------
 augroup qf
     autocmd!
@@ -160,6 +163,7 @@ nnoremap <space> <C-w>w
 "Buffer toggles
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :UndotreeToggle<CR>
+nnoremap <F8> :TagbarToggle<CR>
 
 "Easier navigation of command mode
 cnoremap <C-k> <Up>
