@@ -4,35 +4,47 @@ set nocompatible
 "---------------------------
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'
-Plug 'jiangmiao/auto-pairs'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+"UI
 Plug 'romainl/flattened'
-Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-fugitive'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
+Plug 'dzeban/vim-log-syntax'
+
+"Functionality
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-Plug 'moll/vim-node'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-session'
 Plug 'bronson/vim-visual-star-search'
-Plug 'irrationalistic/vim-tasks'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'unblevable/quick-scope'
+Plug 'mhinz/vim-startify'
+
+Plug 'vim-airline/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
 Plug 'ervandew/supertab'
-Plug 'morhetz/gruvbox'
-Plug 'unblevable/quick-scope'
-Plug 'dzeban/vim-log-syntax'
+
+"Development
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/syntastic'
+Plug 'alvan/vim-closetag'
+
+"Javascript
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'moll/vim-node'
+Plug 'othree/javascript-libraries-syntax.vim'
+
+"Misc
+Plug 'irrationalistic/vim-tasks'
 
 call plug#end()
 
@@ -151,6 +163,10 @@ let g:closetag_filenames = "*.js,*.jsx,*.html,*.xhtml,*.phtml"
 "quick-scope
 "---------------------------
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+"supertab
+"---------------------------
+let g:SuperTabDefaultCompletionType = "context"
 
 "Mappings
 "---------------------------
