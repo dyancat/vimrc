@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 Plug 'dzeban/vim-log-syntax'
+Plug 'junegunn/seoul256.vim'
 
 "Functionality
 Plug 'tpope/vim-surround'
@@ -18,12 +19,12 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
-" Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 Plug 'bronson/vim-visual-star-search'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'unblevable/quick-scope'
-Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
 
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -95,10 +96,11 @@ syntax enable
 
 "GUI options
 "---------------------------
-let g:gruvbox_invert_selection=0
-let g:gruvbox_contrast_dark = 'soft'
-let g:gruvbox_contrast_light = 'soft'
-colorscheme gruvbox
+" let g:gruvbox_invert_selection=0
+" let g:gruvbox_contrast_dark = 'soft'
+" let g:gruvbox_contrast_light = 'soft'
+
+colorscheme hybrid_material
 set background=dark
 
 if has("gui_running")
@@ -106,7 +108,7 @@ if has("gui_running")
 
     set guioptions-=T "remove toolbar
     set guioptions-=m "remove menubar
-    set guioptions-=r "remove right-hand scrollbar
+    " set guioptions-=r "remove right-hand scrollbar
     set guioptions-=L "remove left-hand scrollbar
 endif
 
@@ -192,7 +194,7 @@ inoremap <C-s> <C-o>:w<CR>
 "Buffer switching/closing/creating
 nnoremap <C-TAB> :bn<CR>
 nnoremap <C-S-TAB> :bp<CR>
-nnoremap <C-c> :bp\|bd #<CR>
+nnoremap <C-BS> :bp\|bd #<CR>
 nnoremap <C-t> :enew<CR>
 
 "Easier yanking/pasting from system clipboard
@@ -213,6 +215,9 @@ nnoremap <leader>V :so $MYVIMRC<CR>
 
 "JSON formatting
 nnoremap <leader>j :set ft=json<CR>:%!python -m json.tool<CR>
+
+"XML formatting
+nnoremap <leader>xml :set ft=xml<CR>:%s/></>\r<<CR>gg=G
 
 "Macro editing
 nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
