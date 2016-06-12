@@ -19,12 +19,12 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-session'
 Plug 'bronson/vim-visual-star-search'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'unblevable/quick-scope'
-"Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -108,7 +108,7 @@ if has("gui_running")
 
     set guioptions-=T "remove toolbar
     set guioptions-=m "remove menubar
-    " set guioptions-=r "remove right-hand scrollbar
+    set guioptions-=r "remove right-hand scrollbar
     set guioptions-=L "remove left-hand scrollbar
 endif
 
@@ -169,6 +169,11 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 "supertab
 "---------------------------
 let g:SuperTabDefaultCompletionType = "context"
+
+"startify
+"---------------------------
+let g:startify_session_persistence = 1
+let g:startify_skiplist = [ 'H:\.*' ]
 
 "Mappings
 "---------------------------
