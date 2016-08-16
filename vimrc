@@ -11,7 +11,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 Plug 'dzeban/vim-log-syntax'
-Plug 'junegunn/seoul256.vim'
+Plug 'chriskempson/base16-vim'
 Plug 'tomasr/molokai'
 
 "Functionality
@@ -24,6 +24,7 @@ Plug 'bronson/vim-visual-star-search'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'unblevable/quick-scope'
 Plug 'mhinz/vim-startify'
+Plug 'justinmk/vim-sneak'
 
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -101,7 +102,6 @@ syntax enable
 " let g:gruvbox_contrast_dark = 'soft'
 " let g:gruvbox_contrast_light = 'soft'
 
-
 if has("gui_running")
     set guifont=Consolas:h11
 
@@ -110,7 +110,7 @@ if has("gui_running")
     " set guioptions-=r "remove right-hand scrollbar
     set guioptions-=L "remove left-hand scrollbar
 
-    colorscheme gruvbox
+    colorscheme base16-oceanicnext
     set background=dark
 endif
 
@@ -143,7 +143,7 @@ let g:syntastic_check_on_wq = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_theme='gruvbox'
+let g:airline_theme='base16_ocean'
 
 "vim-tasks
 "---------------------------
