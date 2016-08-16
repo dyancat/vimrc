@@ -12,6 +12,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 Plug 'dzeban/vim-log-syntax'
 Plug 'junegunn/seoul256.vim'
+Plug 'tomasr/molokai'
 
 "Functionality
 Plug 'tpope/vim-surround'
@@ -19,8 +20,6 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
-" Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-session'
 Plug 'bronson/vim-visual-star-search'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'unblevable/quick-scope'
@@ -91,6 +90,8 @@ set autoread
 set lazyredraw
 set wildmenu
 
+set display+=lastline
+
 syntax enable
 
 
@@ -100,16 +101,17 @@ syntax enable
 " let g:gruvbox_contrast_dark = 'soft'
 " let g:gruvbox_contrast_light = 'soft'
 
-colorscheme hybrid_material
-set background=dark
 
 if has("gui_running")
     set guifont=Consolas:h11
 
     set guioptions-=T "remove toolbar
     set guioptions-=m "remove menubar
-    set guioptions-=r "remove right-hand scrollbar
+    " set guioptions-=r "remove right-hand scrollbar
     set guioptions-=L "remove left-hand scrollbar
+
+    colorscheme gruvbox
+    set background=dark
 endif
 
 "ctrlp
@@ -174,6 +176,8 @@ let g:SuperTabDefaultCompletionType = "context"
 "---------------------------
 let g:startify_session_persistence = 1
 let g:startify_skiplist = [ 'H:\.*' ]
+let g:startify_list_order = ['dir', 'bookmarks', 'sessions']
+let g:startify_files_number = 0
 
 "Mappings
 "---------------------------
@@ -186,7 +190,6 @@ nnoremap <space> <C-w>w
 "Buffer toggles
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :UndotreeToggle<CR>
-nnoremap <F8> :TagbarToggle<CR>
 
 "Easier navigation of command mode
 cnoremap <C-k> <Up>
