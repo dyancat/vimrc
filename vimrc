@@ -34,8 +34,9 @@ Plug 'mbbill/undotree'
 Plug 'ervandew/supertab'
 
 "Development
-Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/syntastic'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'scrooloose/syntastic'
+Plug 'Raimondi/delimitMate'
 Plug 'alvan/vim-closetag'
 
 "Javascript
@@ -43,6 +44,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'moll/vim-node'
 Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'leafgarland/typescript-vim'
 
 "Misc
 Plug 'irrationalistic/vim-tasks'
