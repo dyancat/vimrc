@@ -32,9 +32,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
 Plug 'ervandew/supertab'
+Plug 'airblade/vim-gitgutter'
 
 "Development
-" Plug 'jiangmiao/auto-pairs'
 " Plug 'scrooloose/syntastic'
 Plug 'Raimondi/delimitMate'
 Plug 'alvan/vim-closetag'
@@ -47,7 +47,8 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'leafgarland/typescript-vim'
 
 "Misc
-Plug 'irrationalistic/vim-tasks'
+" Plug 'irrationalistic/vim-tasks'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -112,7 +113,7 @@ if has("gui_running")
     " set guioptions-=r "remove right-hand scrollbar
     set guioptions-=L "remove left-hand scrollbar
 
-    colorscheme base16-oceanicnext
+    colorscheme flattened_dark
     set background=dark
 endif
 
@@ -131,9 +132,9 @@ let g:session_autosave = 'yes'
 "let g:syntastic_javascript_checkers = ['eslint']
 "let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -177,9 +178,12 @@ let g:SuperTabDefaultCompletionType = "context"
 "startify
 "---------------------------
 let g:startify_session_persistence = 1
-let g:startify_skiplist = [ 'H:\.*' ]
-let g:startify_list_order = ['dir', 'bookmarks', 'sessions']
-let g:startify_files_number = 0
+" let g:startify_skiplist = [ 'H:\.*' ]
+" let g:startify_list_order = ['dir', 'bookmarks', 'sessions']
+" let g:startify_files_number = 0
+
+"vimwiki
+let g:vimwiki_list = [{'path': 'D:\Dropbox\_TODO\', 'path_html': 'D:\Dropbox\_TODO\wiki_html\'}]
 
 "Mappings
 "---------------------------
@@ -239,6 +243,10 @@ vmap <Leader>/ gc
 "%% in command mode expands to current dir
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h') : '%%'
 
+" move over wrapped lines
+nnoremap j gj
+nnoremap k gk
+
 "Misc
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>b :ls<CR>
@@ -246,3 +254,30 @@ nnoremap <leader>== gg=G``
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 noremap 0 ^
 noremap ^ 0
+
+" Remap K to split lines (Steve Losh)
+nnoremap K i<CR><Esc><Right>mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+
+" Remap J to split lines (Steve Losh)
+nnoremap J mzJ`z
+
+" Keep search matches in middle of window
+nnoremap <silent> n nzzzv
+nnoremap <silent> N Nzzzv
+
+" Use ctrl+hjkl to move between window splits
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" Create empty line without leaving normal mode
+" nnoremap <Enter> m`o<Esc>k``
+"
+nnoremap <F12> :silent grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
