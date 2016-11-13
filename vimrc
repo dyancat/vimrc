@@ -249,7 +249,7 @@ nnoremap k gk
 
 "Misc
 nnoremap <leader><space> :noh<cr>
-nnoremap <leader>b :ls<CR>
+nnoremap <leader>b :CtrlPBuffer<cr>
 nnoremap <leader>== gg=G``
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 noremap 0 ^
