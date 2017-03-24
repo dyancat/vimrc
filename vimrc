@@ -16,7 +16,7 @@ Plug 'tomasr/molokai'
 
 "Functionality
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-speeddating'
+" Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
@@ -32,7 +32,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
 Plug 'ervandew/supertab'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 
 "Development
 " Plug 'scrooloose/syntastic'
@@ -101,9 +101,9 @@ syntax enable
 
 "GUI options
 "---------------------------
-" let g:gruvbox_invert_selection=0
-" let g:gruvbox_contrast_dark = 'soft'
-" let g:gruvbox_contrast_light = 'soft'
+let g:gruvbox_invert_selection=0
+let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_contrast_light = 'soft'
 
 if has("gui_running")
     set guifont=Consolas:h11
@@ -113,7 +113,7 @@ if has("gui_running")
     " set guioptions-=r "remove right-hand scrollbar
     set guioptions-=L "remove left-hand scrollbar
 
-    colorscheme flattened_dark
+    colorscheme base16-spacemacs
     set background=dark
 endif
 
@@ -146,7 +146,7 @@ let g:syntastic_check_on_wq = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_theme='base16_ocean'
+let g:airline_theme='molokai'
 
 "vim-tasks
 "---------------------------
@@ -178,9 +178,9 @@ let g:SuperTabDefaultCompletionType = "context"
 "startify
 "---------------------------
 let g:startify_session_persistence = 1
-" let g:startify_skiplist = [ 'H:\.*' ]
-" let g:startify_list_order = ['dir', 'bookmarks', 'sessions']
-" let g:startify_files_number = 0
+let g:startify_skiplist = [ 'H:\.*' ]
+let g:startify_list_order = ['dir', 'bookmarks', 'sessions']
+let g:startify_files_number = 0
 
 "vimwiki
 let g:vimwiki_list = [{'path': 'D:\Dropbox\_TODO\', 'path_html': 'D:\Dropbox\_TODO\wiki_html\'}]
@@ -208,7 +208,8 @@ inoremap <C-s> <C-o>:w<CR>
 "Buffer switching/closing/creating
 nnoremap <C-TAB> :bn<CR>
 nnoremap <C-S-TAB> :bp<CR>
-nnoremap <C-BS> :bp\|bd #<CR>
+nnoremap <leader>d :bp\|bd #<CR>
+nnoremap <leader>D :bp\|bd! #<CR>
 nnoremap <C-t> :enew<CR>
 
 "Easier yanking/pasting from system clipboard
