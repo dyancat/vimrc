@@ -113,7 +113,7 @@ if has("gui_running")
     " set guioptions-=r "remove right-hand scrollbar
     set guioptions-=L "remove left-hand scrollbar
 
-    colorscheme base16-spacemacs
+    colorscheme base16-flat
     set background=dark
 endif
 
@@ -146,7 +146,7 @@ let g:syntastic_check_on_wq = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_theme='base16_tomorrow'
+let g:airline_theme='base16_flat'
 
 "vim-tasks
 "---------------------------
@@ -232,7 +232,7 @@ nnoremap <leader>V :so $MYVIMRC<CR>
 nnoremap <leader>j :set ft=json<CR>:%!python -m json.tool<CR>
 
 "XML formatting
-nnoremap <leader>xml :set ft=xml<CR>:%s/></>\r<<CR>gg=G
+nnoremap <leader>xml :set ft=xml<CR>:%s/>\s*</>\r<<CR>gg=G
 
 "Macro editing
 nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
