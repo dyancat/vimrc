@@ -20,16 +20,17 @@
 "----------------------------
 call plug#begin()
 
-"Theme
+" Theme
 Plug 'GertjanReynaert/cobalt2-vim-theme'
 Plug 'ericbn/vim-solarized'
 
-"Features
+" Features
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'bronson/vim-visual-star-search'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -41,13 +42,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-
 set autochdir
 set scrolloff=3
 set nobackup
 set noswapfile
-nnoremap / /\v
-vnoremap / /\v
 set gdefault
 set ignorecase
 set smartcase
@@ -56,42 +54,42 @@ set number
 set hidden
 set foldmethod=indent
 set foldlevelstart=20
-
 set lazyredraw
 
 syntax enable
-
-
-"GUI options
-"---------------------------
-colorscheme solarized
+colorscheme cobalt2
 set background=dark
 
-"Mappings
+"---------------------------
+"-------  Mappings ---------
 "---------------------------
 
 let mapleader = ","
 noremap \ ,
 
-"Easier changing of windows
+" Default search mode
+nnoremap / /\v
+vnoremap / /\v
+
+" Window navigation
 nnoremap <space> <C-w>w
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
-"Easier navigation of command mode
-cnoremap <C-k> <Up>
-cnoremap <C-j> <Down>
-
-"CTRL-S for saving
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <C-o>:w<CR>
-
-"Buffer switching/closing/creating
+" Buffer management
 nnoremap <C-TAB> :bn<CR>
 nnoremap <C-S-TAB> :bp<CR>
 nnoremap <leader>d :bp\|bd #<CR>
 nnoremap <leader>D :bp\|bd! #<CR>
 nnoremap <C-t> :enew<CR>
 
-"Easier yanking/pasting from system clipboard
+" CTRL-S for saving
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <C-o>:w<CR>
+
+" Yanking/pasting from system clipboard
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
@@ -100,24 +98,20 @@ nnoremap <leader>y "+y
 nnoremap <leader>Y "+Y
 vnoremap <leader>y "+y
 vnoremap <leader>Y "+Y
-nnoremap <leader>op o<ESC>"+p
-nnoremap <leader>oP O<ESC>"+P
 
-"Easier vimrc editing/reloading
+" vimrc editing
 nnoremap <leader>v :e $MYVIMRC<CR>
 nnoremap <leader>V :so $MYVIMRC<CR>
 
-"JSON formatting
+" Formatting
 nnoremap <leader>j :set ft=json<CR>:%!python -m json.tool<CR>
-
-"XML formatting
 nnoremap <leader>xml :set ft=xml<CR>:%s/>\s*</>\r<<CR>gg=G
 
-"Commenting
+" Commenting
 nmap <Leader>/ gcc
 vmap <Leader>/ gc
 
-" move over wrapped lines
+" Move over wrapped lines
 nnoremap j gj
 nnoremap k gk
 
@@ -128,18 +122,9 @@ nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 noremap 0 ^
 noremap ^ 0
 
-" Remap K to split lines (Steve Losh)
-nnoremap K i<CR><Esc><Right>mwgk:silent! s/\v +$//<CR>:noh<CR>`w
-
 " Remap J to split lines (Steve Losh)
 nnoremap J mzJ`z
 
 " Keep search matches in middle of window
 nnoremap <silent> n nzzzv
 nnoremap <silent> N Nzzzv
-
-" Use ctrl+hjkl to move between window splits
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
