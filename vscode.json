@@ -1,0 +1,128 @@
+{
+    // Editor UI
+    "editor.lineHeight": 25,
+    "editor.letterSpacing": 0.2,
+    "workbench.settings.editor": "json",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
+    "workbench.colorCustomizations": {
+      "merge.commonContentBackground": "#c97d0c",
+      "merge.commonHeaderBackground": "#c97d0c",
+      "merge.currentContentBackground": "#2F7366",
+      "merge.currentHeaderBackground": "#2F7366",
+      "merge.incomingContentBackground": "#185294",
+      "merge.incomingHeaderBackground": "#185294",
+      "statusBar.debuggingBorder": "#ffc600",
+      "statusBar.debuggingForeground": "#ffc600",
+      "statusBar.noFolderBorder": "#0d3a58",
+      "statusBar.background": "#005f5f",
+      "statusBar.noFolderBackground": "#005f5f",
+      "statusBar.debuggingBackground": "#005f5f"
+    },
+    "explorer.autoReveal": "focusNoScroll",
+
+    // Editor behaviour
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "window.openFilesInNewWindow": "default",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.enablePreview": false,
+    "files.trimTrailingWhitespace": true,
+    "[markdown]": {
+      "files.trimTrailingWhitespace": false
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/bower_components": true,
+      "**/dist": true,
+      "**/coverage": true
+    },
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": false,
+
+    // Languages
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "[typescript]": {
+      "editor.formatOnPaste": true,
+      "editor.formatOnType": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": false,
+        "source.fixAll.eslint": true,
+      },
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescriptreact]": {
+      "editor.formatOnPaste": true,
+      "editor.formatOnType": true,
+      "editor.defaultFormatter": "vscode.typescript-language-features",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": false,
+        "source.fixAll.eslint": true,
+      },
+    },
+    "[javascript]": {
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": false,
+        "source.fixAll.eslint": false
+      },
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+
+    /*****************
+    *   Extensions   *
+    ******************/
+    // TSLint
+    "tslint.ignoreDefinitionFiles": false,
+
+    // ESLint
+    "eslint.lintTask.enable": true,
+
+    // Git
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.alwaysShowStagedChangesResourceGroup": true,
+    "git.confirmSync": false,
+    "git.detectSubmodulesLimit": 20,
+    "git.showPushSuccessNotification": true,
+
+    // Sync
+    "sync.gist": "5c648835b238a2491eceff58df04c7e8",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.forceDownload": false,
+    "sync.quietSync": false,
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true,
+
+    // Vim
+    "vim.hlsearch": true,
+    "vim.useCtrlKeys": false,
+    "vim.visualstar": true,
+    "vim.normalModeKeyBindings": [
+      {
+        "before": ["u"],
+        "commands": ["undo"]
+      }
+    ],
+
+    // barrelr
+    "barrelr.excludeFileRegex": "(\\.spec\\.|\\.test\\.|\\.e2e\\.|__test__)",
+
+    /*****************
+    *    Unsorted    *
+    ******************/
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.colorTheme": "Cobalt2",
+    "explorer.confirmDelete": false
+  }
