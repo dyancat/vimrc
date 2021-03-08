@@ -1,0 +1,317 @@
+// Empty
+[
+  {
+    "key": "alt+enter",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+.",
+    "command": "-editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "workbench.action.files.saveAll"
+  },
+  {
+    "key": "alt+cmd+s",
+    "command": "-workbench.action.files.saveAll"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "editor.action.clipboardCopyAction",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.terminal.copySelection",
+    "when": "terminalFocus && terminalTextSelected"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "extension.vim_cmd+c",
+    "when": "editorTextFocus && vim.active && vim.overrideCopy && vim.use<D-c> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "keybindings.editor.copyKeybindingEntry",
+    "when": "inKeybindings && keybindingFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "problems.action.copy",
+    "when": "problemFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "search.action.copyMatch",
+    "when": "fileMatchOrMatchFocus"
+  },
+  {
+    "key": "ctrl+alt+c",
+    "command": "search.action.copyPath",
+    "when": "fileMatchOrFolderMatchFocus"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+c",
+    "command": "editor.action.addCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+/",
+    "command": "editor.foldAllBlockComments",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+u",
+    "command": "editor.action.removeCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "undo",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "cursorUndo",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "editor.action.clipboardPasteAction",
+    "when": "!editorReadonly"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "workbench.action.terminal.deleteWordLeft",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+backspace",
+    "command": "-workbench.action.terminal.deleteWordLeft",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+backspace",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "alt+cmd+backspace",
+    "command": "-deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+backspace",
+    "command": "-deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+shift+escape",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "alt+escape",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "alt+escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "f2",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "shift+alt+l",
+    "command": "workbench.files.action.showActiveFileInExplorer"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "actions.find"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "workbench.action.terminal.focusFindWidget",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "actions.findWithSelection"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "editor.action.startFindReplaceAction"
+  },
+  {
+    "key": "alt+a",
+    "command": "editor.action.replaceAll",
+    "when": "editorFocus && findWidgetVisible"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "workbench.action.replaceInFiles"
+  },
+  {
+    "key": "ctrl+,",
+    "command": "workbench.action.openSettings"
+  },
+  {
+    "key": "ctrl+x",
+    "command": "editor.action.clipboardCutAction",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "workbench.action.terminal.selectAll",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "editor.action.selectAll",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "editor.action.webvieweditor.selectAll",
+    "when": "webviewEditorFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "list.selectAll",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "extension.vim_cmd+a",
+    "when": "editorTextFocus && vim.active && vim.use<D-a> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "editor.action.webvieweditor.paste",
+    "when": "!editorFocus && !inputFocus && activeEditor == 'workbench.editor.htmlPreviewPart'"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "editor.action.webvieweditor.paste",
+    "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "workbench.action.terminal.paste",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "alt+l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "redo",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+z",
+    "command": "-redo",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "editor.action.webvieweditor.redo",
+    "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "shift+cmd+z",
+    "command": "-editor.action.webvieweditor.redo",
+    "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "default:redo"
+  }
+]
