@@ -32,6 +32,24 @@
     "eqeqeq": ["error", "always", { "null": "ignore" }],
     "max-classes-per-file": "error",
 
+    // @typescript-eslint
+    "@typescript-eslint/explicit-member-accessibility": "error",
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    "@typescript-eslint/prefer-nullish-coalescing": "error",
+    "@typescript-eslint/prefer-optional-chain": "error",
+    "@typescript-eslint/prefer-readonly": "error",
+    "@typescript-eslint/prefer-reduce-type-parameter": "error",
+    "@typescript-eslint/strict-boolean-expressions": [
+      "error",
+      {
+        "allowString": false,
+        "allowNumber": false,
+        "allowNullableObject": false,
+        "allowNullableBoolean": true
+      }
+    ],
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+
     // react-hooks
     "react-hooks/exhaustive-deps": "error", // Prefer as error rather than warning
 
