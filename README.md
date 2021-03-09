@@ -1,4 +1,3 @@
-# vimrc
-My windows vimrc config
+# Config
 
-Clone into %HOME%\vimfiles\
+Various configuration files
